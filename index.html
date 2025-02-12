@@ -1,44 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Elevator System</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Elevator System</h1>
-    <div class="floor-indicator">
-      Current Floor: <span id="current-floor">1</span>
-    </div>
-    <div class="building">
-      <div class="elevator" id="elevator">
-        <div class="door left-door" id="left-door"></div>
-        <div class="door right-door" id="right-door"></div>
-      </div>
-      <div class="floor">1</div>
-      <div class="floor">2</div>
-      <div class="floor">3</div>
-      <div class="floor">4</div>
-      <div class="floor">5</div>
-      <div class="floor">6</div>
-      <div class="floor">7</div>
-      <div class="floor">8</div>
-    </div>
-    <div class="controls">
-      <h2>Controls</h2>
-      <button onclick="queueFloor(1)">Floor 1</button>
-      <button onclick="queueFloor(2)">Floor 2</button>
-      <button onclick="queueFloor(3)">Floor 3</button>
-      <button onclick="queueFloor(4)">Floor 4</button>
-      <button onclick="queueFloor(5)">Floor 5</button>
-      <button onclick="queueFloor(6)">Floor 6</button>
-      <button onclick="queueFloor(7)">Floor 7</button>
-      <button onclick="queueFloor(8)">Floor 8</button>
-      <br />
-      <button onclick="openDoor()">Open Door</button>
-      <button onclick="closeDoor()">Close Door</button>
-    </div>
-    <script src="elevator_function.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Elevator System</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1>Elevator System</h1>
+        <div class="floor-indicator">
+            Current Floor: <span id="current-floor">1</span>
+        </div>
+        <div class="building">
+            <div class="elevator" id="elevator">
+                <div class="door left-door" id="left-door"></div>
+                <div class="door right-door" id="right-door"></div>
+            </div>
+            <div class="floor">1</div>
+            <div class="floor">2</div>
+            <div class="floor">3</div>
+            <div class="floor">4</div>
+            <div class="floor">5</div>
+            <div class="floor">6</div>
+            <div class="floor">7</div>
+            <div class="floor">8</div>
+            <div class="floor">9</div>
+        </div>
+        <div class="controls">
+            <h2>Controls</h2>
+            <button onclick="queueFloor(1)">Floor 1</button>
+            <button onclick="queueFloor(2)">Floor 2</button>
+            <button onclick="queueFloor(3)">Floor 3</button>
+            <button onclick="queueFloor(4)">Floor 4</button>
+            <button onclick="queueFloor(5)">Floor 5</button>
+            <button onclick="queueFloor(6)">Floor 6</button>
+            <button onclick="queueFloor(7)">Floor 7</button>
+            <button onclick="queueFloor(8)">Floor 8</button>
+            <br />
+            <button onclick="openDoor()">Open Door</button>
+            <button onclick="closeDoor()">Close Door</button>
+        </div>
+        <script src="elevator_function.js"></script>
+    </body>
 </html>
