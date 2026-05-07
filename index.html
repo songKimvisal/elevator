@@ -4,42 +4,309 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Elevator System</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Elevator System</h1>
-        <div class="floor-indicator">
-            Current Floor: <span id="current-floor">1</span>
+        <div class="control-panel left-control">
+            <div class="display">Floor: 1</div>
+            <div class="buttons">
+                <div class="button-pair">
+                    <button data-floor="4">4</button>
+                    <button data-floor="8">8</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="3">3</button>
+                    <button data-floor="7">7</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="2">2</button>
+                    <button data-floor="6">6</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="1">1</button>
+                    <button data-floor="5">5</button>
+                </div>
+                <div class="button-pair">
+                    <button onclick="openDoor('left')">
+                        <svg
+                            style="transform: rotate(90deg)"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevrons-up-down"
+                        >
+                            <path d="m7 15 5 5 5-5" />
+                            <path d="m7 9 5-5 5 5" />
+                        </svg>
+                    </button>
+                    <button onclick="closeDoor('left')">
+                        <svg
+                            style="transform: rotate(90deg)"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevrons-down-up"
+                        >
+                            <path d="m7 20 5-5 5 5" />
+                            <path d="m7 4 5 5 5-5" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- <div class="button-pair">
+                    <button onclick="moveElevator('left', 'up')">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-circle-arrow-up"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="m16 12-4-4-4 4" />
+                            <path d="M12 16V8" />
+                        </svg>
+                    </button>
+                    <button onclick="moveElevator('left', 'down')">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-circle-arrow-down"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v8" />
+                            <path d="m8 12 4 4 4-4" />
+                        </svg>
+                    </button>
+                </div> -->
+            </div>
         </div>
         <div class="building">
-            <div class="elevator" id="elevator">
-                <div class="door left-door" id="left-door"></div>
-                <div class="door right-door" id="right-door"></div>
+            <!-- Setup building background/foreground -->
+            <img class="bg" src="images/full_building_bg.png" alt="" />
+            <img class="fg" src="images/full_building_fg_tr.png" alt="" />
+            <img class="cover" src="images/full_building_bg.png" alt="" />
+
+            <!-- Left Elevator Door -->
+            <div class="left-door">
+                <img
+                    class="door left-panel"
+                    src="./images/door-left.png"
+                    alt="Left Door"
+                />
+                <img
+                    class="door right-panel"
+                    src="./images/door-right.png"
+                    alt="Right Door"
+                />
             </div>
-            <div class="floor">1</div>
-            <div class="floor">2</div>
-            <div class="floor">3</div>
-            <div class="floor">4</div>
-            <div class="floor">5</div>
-            <div class="floor">6</div>
-            <div class="floor">7</div>
-            <div class="floor">8</div>
-            <div class="floor">9</div>
+            <div class="indoor-button_left f8">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f7">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f6">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f5">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f4">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f3">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f2">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_left f1">
+                <button onclick="moveElevator('left', 'up')"></button>
+                <button onclick="moveElevator('left', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f8">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f7">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f6">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f5">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f4">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f3">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f2">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <div class="indoor-button_right f1">
+                <button onclick="moveElevator('right', 'up')"></button>
+                <button onclick="moveElevator('right', 'down')"></button>
+            </div>
+            <!-- Right Elevator Door -->
+            <div class="right-door">
+                <img
+                    class="door left-panel"
+                    src="./images/door-left.png"
+                    alt="Left Door"
+                />
+                <img
+                    class="door right-panel"
+                    src="./images/door-right.png"
+                    alt="Right Door"
+                />
+            </div>
         </div>
-        <div class="controls">
-            <h2>Controls</h2>
-            <button onclick="queueFloor(1)">Floor 1</button>
-            <button onclick="queueFloor(2)">Floor 2</button>
-            <button onclick="queueFloor(3)">Floor 3</button>
-            <button onclick="queueFloor(4)">Floor 4</button>
-            <button onclick="queueFloor(5)">Floor 5</button>
-            <button onclick="queueFloor(6)">Floor 6</button>
-            <button onclick="queueFloor(7)">Floor 7</button>
-            <button onclick="queueFloor(8)">Floor 8</button>
-            <br />
-            <button onclick="openDoor()">Open Door</button>
-            <button onclick="closeDoor()">Close Door</button>
+        <!-- Control panel -->
+
+        <div class="control-panel right-control">
+            <div class="display">Floor: 1</div>
+            <div class="buttons">
+                <div class="button-pair">
+                    <button data-floor="4">4</button>
+                    <button data-floor="8">8</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="3">3</button>
+                    <button data-floor="7">7</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="2">2</button>
+                    <button data-floor="6">6</button>
+                </div>
+                <div class="button-pair">
+                    <button data-floor="1">1</button>
+                    <button data-floor="5">5</button>
+                </div>
+                <div class="button-pair">
+                    <button onclick="openDoor('right')">
+                        <svg
+                            style="transform: rotate(90deg)"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevrons-up-down"
+                        >
+                            <path d="m7 15 5 5 5-5" />
+                            <path d="m7 9 5-5 5 5" />
+                        </svg>
+                    </button>
+                    <button onclick="closeDoor('right')">
+                        <svg
+                            style="transform: rotate(90deg)"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-chevrons-down-up"
+                        >
+                            <path d="m7 20 5-5 5 5" />
+                            <path d="m7 4 5 5 5-5" />
+                        </svg>
+                    </button>
+                </div>
+                <!-- <div class="button-pair">
+                    <button onclick="moveElevator('right', 'up')">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-circle-arrow-up"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="m16 12-4-4-4 4" />
+                            <path d="M12 16V8" />
+                        </svg>
+                    </button>
+                    <button onclick="moveElevator('right', 'down')">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-circle-arrow-down"
+                        >
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 8v8" />
+                            <path d="m8 12 4 4 4-4" />
+                        </svg>
+                    </button>
+                </div> -->
+            </div>
         </div>
-        <script src="elevator_function.js"></script>
+        <!-- Load JS -->
+        <script type="module" src="script/main.js"></script>
     </body>
 </html>
